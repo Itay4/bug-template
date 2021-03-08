@@ -1,0 +1,191 @@
+name: Content Bug
+about: Report for a new Content related Bug
+title: "[Bug] "
+labels: bug, content
+body:
+- type: input
+  attributes:
+    label: Customer
+    description: Reported Customer
+- type: textarea
+  attributes:
+    label: Bug Description
+    description: A clear and concise description of what the bug is.
+    required: true
+- type: textarea
+  attributes:
+    label: To Reproduce
+    description: Steps to reproduce the behavior.
+    required: true
+    placeholder: |
+      1. Go to '...'
+      2. Click on '....'
+      3. Scroll down to '....'
+      4. See error
+      If you were not able to reproduce the problem, please try to elaborate on what you tried.
+- type: checkboxes
+  attributes:
+    label: Proxy
+    options:
+      - label: Using proxy?
+      - label: Proxy using SSL Termination (usually requires `Trust Any Certificate` configuration of the Integration)
+- type: markdown
+  attributes:
+    value: **Integration: Third Party Products**
+- type: input
+  attributes:
+    label: What is the full Product Version 
+    placeholder: "e.g.: Exchange 2010 SP3"
+- type: input
+  attributes:
+    label: Product Configuration 
+    placeholder: "(e.g.: running on-prem on a separate sub-net)"
+- type: dropdown
+  attributes:
+    label: "Did the customer recently upgrade the product's version?"
+    multiple: false
+    options:
+      - Yes
+      - No
+  validations:
+    required: true
+- type: markdown
+  attributes:
+    value: **Integration Details: Demisto Side**
+- type: dropdown
+  attributes:
+    label: "Is the integration you're using deprecated? If so, don't open this bug, we do not support deprecated integrations."
+    multiple: false
+    options:
+      - Yes
+      - No
+  validations:
+    required: true
+- type: dropdown
+  attributes:
+    label: "Is there a V2 for the integration you're using?"
+    multiple: false
+    options:
+      - Yes
+      - No
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: "Have you tried using the v2 integration? If you haven't, please explain why."
+- type: markdown
+  attributes:
+    value: "Please attach screenshots of the full instance configuration."
+- type: dropdown
+  attributes:
+    label: "Did you test the instance?"
+    multiple: false
+    options:
+      - Yes
+      - No
+  validations:
+    required: true
+- type: input
+  attributes:
+   label: "What was the test's result?"
+   required: true
+- type: dropdown
+  attributes:
+    label: "Did you use the OOTB integration, or a custom integration?"
+    multiple: false
+    options:
+      - OOTB
+      - Custom
+  validations:
+    required: true
+- type: input
+  attributes:
+   label: "If you used a custom integration, please explain why."
+- type: markdown
+  attributes:
+    value: "**Logs**"
+- type: markdown
+  attributes:
+    value: "**debug-mode=true** log file of the executed command, to get this file run the following `!<the relevant command> ... debug-mode=true`. For example: `!ip ip=8.8.8.8 debug-mode=true` (Server 5.0+)."
+- type: markdown
+  attributes:
+    value: "Server logs in DEBUG"
+- type: input
+  attributes:
+   label: "If possible, specify local time the issue was reproduced so we can easily search the logs"
+- type: dropdown
+  attributes:
+    label: "Did you review the logs before opening this bug?"
+    multiple: false
+    options:
+      - Yes
+      - No
+  validations:
+    required: true
+- type: markdown
+  attributes:
+    value: "**Bug Details**"
+- type: dropdown
+  attributes:
+    label: "Is this the first time you've used this integration / command?"
+    multiple: false
+    options:
+      - Yes
+      - No
+  validations:
+    required: true
+- type: input
+  attributes:
+   label: "If not, when did the bug start?"
+- type: input
+  attributes:
+   label: "What was the exact command you ran?" 
+   description: "Please attach the full command, arguments included."
+   required: true
+- type: input
+  attributes:
+   label: "What was the exact error you've received?" 
+   description: "Please attach the full text."
+   required: true
+- type: input
+  attributes:
+   label: "If you labeled the bug as high priority, please explain why." 
+- type: dropdown
+  attributes:
+    label: "If the bug is in `Fetch Incidents` functionality - did you try resetting the last timestamp?"
+    multiple: false
+    options:
+      - Yes
+      - No
+- type: input
+  attributes:
+   label: "What was the outcome?"
+- type: markdown
+  attributes:
+    value: "**Troubleshooting**"
+- type: markdown
+  attributes:
+    value: "* Follow the [Troubleshooting Guide](https://xsoar.pan.dev/docs/reference/articles/troubleshooting-guide) and include in the issue all information obtained from running the troubleshooting steps."
+- type: markdown
+  attributes:
+    value: "**Environment**"
+- type: input
+  attributes:
+   label: "OS"
+   placeholder: "e.g. Linux"
+- type: input
+ attributes:
+  label: "Demisto Version"
+  placeholder: "e.g. 4.1.0 b12345"
+- type: input
+  attributes:
+   label: "Content Version (For Demisto version 5.5 and earlier)"
+   placeholder: "e.g. 19.5.0"
+- type: input
+  attributes:
+   label: "Relevant Content Pack Version (For Demisto version 6.0 and later)"
+   placeholder: "e.g. 1.0.1"
+- type: textarea
+  attributes:
+    label: Additional information
+    description: Add any other information about the problem here.
